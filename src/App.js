@@ -3,10 +3,13 @@ import './App.css';
 import { useState } from 'react';
 import { MovieList } from './MovieList';
 import { AddMovieFn } from './AddMovieFn';
+import { Home } from './Home';
+import { NotFound } from './NotFound';
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+
 
 function App() {
   const [movieList, setmovieList] = useState([{
-
     name: "Vikram",
     poster:
       "https://m.media-amazon.com/images/M/MV5BMmJhYTYxMGEtNjQ5NS00MWZiLWEwN2ItYjJmMWE2YTU1YWYxXkEyXkFqcGdeQXVyMTEzNzg0Mjkx._V1_.jpg",
@@ -89,15 +92,25 @@ function App() {
 
   return (
     <div className="Movie-App">
-      <div className="header">
-        <AddMovieFn movieList={movieList} setmovieList={setmovieList} />
-      </div>
-      <div>
-        <MovieList movieList={movieList} />
-      </div>
+      <h1>Welcome to Movie App ⭐</h1>
+
+      <ul>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/movies">Movies</Link></li>
+        <li><Link to="/add-movie">Add Movie</Link></li>
+      </ul>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/add-movie' element={<AddMovieFn movieList={movieList} setmovieList={setmovieList} />} />
+        <Route path='/movies' element={<MovieList movieList={movieList} />} />
+        <Route path="/film" element={<MovieList movieList={movieList} />} />
+        <Route path="/films" element={<Navigate replace to="/movies" />} />
+        <Route path='*' element={<NotFound />} />
+        {/* <Route path='/color-game' element={<Addcolor />} /> */}
+      </Routes>
+
     </div>
   );
 }
-
 
 export default App;

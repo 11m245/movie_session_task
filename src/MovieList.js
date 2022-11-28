@@ -4,7 +4,7 @@ export function MovieList({ movieList }) {
     // console.log(movieList);
     return (
         <div className="movie-list">
-            {movieList.map((movieObj) => (<Movie movie={movieObj} />))}
+            {movieList.map((movieObj, index) => (<Movie index={index} movie={movieObj} />))}
         </div>
     );
 
