@@ -6,6 +6,11 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from 'react-router-dom';
 
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { Button, CardActionArea, CardActions } from '@mui/material';
+
 
 export function Movie({ movie, index }) {
 
@@ -17,23 +22,29 @@ export function Movie({ movie, index }) {
     const navigate = useNavigate();
 
     return (
-        <div key={index} className="movie-container">
-            <img src={movie.poster} alt={movie.name} className="movie-poster" />
-            <div className="movie-specs">
-                <h2 className="movie-name">{movie.name}
-                    <IconButton onClick={() => setShow(!show)} aria-label="toggel-movie-summary" color="primary">
-                        {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
-                    </IconButton>
+        <Card key={index} className="movie-container">
+            <CardActionArea>
+                <img src={movie.poster} alt={movie.name} className="movie-poster" />
+                <CardContent>
+                    <div className="movie-specs">
+                        <h2 className="movie-name">{movie.name}
+                            <IconButton onClick={() => setShow(!show)} aria-label="toggel-movie-summary" color="primary">
+                                {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
+                            </IconButton>
 
-                    <IconButton onClick={() => navigate(`/movies/${index}`)} aria-label="movie-info" color="primary">
-                        <InfoIcon />
-                    </IconButton>
-                </h2>
-                <p style={rating_style} className="movie-rating"> ⭐ {movie.rating}</p>
-            </div>
-            {show ? <p className="movie-summary">{movie.summary}</p> : null}
-            <LikeDisLikeButton />
-        </div>
+                            <IconButton onClick={() => navigate(`/movies/${index}`)} aria-label="movie-info" color="primary">
+                                <InfoIcon />
+                            </IconButton>
+                        </h2>
+                        <p style={rating_style} className="movie-rating"> ⭐ {movie.rating}</p>
+                    </div>
+                    {show ? <p className="movie-summary">{movie.summary}</p> : null}
+                </CardContent>
+            </CardActionArea>
+            <CardActions>
+                <LikeDisLikeButton />
+            </CardActions>
+        </Card>
     );
 
 }

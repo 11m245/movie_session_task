@@ -1,13 +1,21 @@
+body {
+    background-color: hsl(205deg 49% 81%);
+}
+
 .movie-poster {
-    height: 640px;
+    height: 400px;
     width: 100%;
     /* zoom  in */
-    object-fit: cover;
+    object-fit: fill;
 }
 
 .movie-name {
     font-size: 24px;
     margin: 0;
+}
+
+.movie-summary {
+    font-size: 16px;
 }
 
 .movie-specs {
@@ -58,5 +66,29 @@
     width: 100%;
     margin: 0 auto;
     position: relative;
+    /* border: 2px solid red; */
+}
+
+/* movie-details-page */
+
+.movie-details-container {
+    max-width: 600px;
+    padding: 1rem;
+    margin-inline: auto;
+}
+
+/* nav-bar */
+.nav-items-wrapper {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-items-wrapper>li {
+    padding-inline: 20px;
+}
+
+.movie-details-wrapper {
+    max-width: 800px;
+    margin-inline: auto;
     /* border: 2px solid red; */
 }
