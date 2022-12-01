@@ -8,6 +8,7 @@ import { NotFound } from './NotFound';
 import { Routes, Route, Link, Navigate } from "react-router-dom";
 import { ButtonAppBar } from "./ButtonAppBar.js"
 import { MovieDetails } from './MovieDetails';
+import { AddColor } from './AddColor';
 
 
 function App() {
@@ -22,8 +23,9 @@ function App() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/movies">Movies</Link></li>
         <li><Link to="/add-movie">Add Movie</Link></li>
+        <li><Link to="/color-game">Color Game</Link></li>
       </ul>
-      <h1>Welcome to Movie App ⭐</h1>
+      <h1 style={{ textAlign: "center" }}>Welcome to Movie App ⭐</h1>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/add-movie' element={<AddMovieFn movieList={movieList} setmovieList={setmovieList} />} />
@@ -32,12 +34,11 @@ function App() {
         <Route path="/films" element={<Navigate replace to="/movies" />} />
         <Route path="/movies/:id" element={<MovieDetails movieList={movieList} />} />
         <Route path='*' element={<NotFound />} />
-        {/* <Route path='/color-game' element={<Addcolor />} /> */}
+        <Route path='/color-game' element={<AddColor />} />
       </Routes>
 
     </div>
   );
 }
-
 
 export default App;

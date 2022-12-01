@@ -16,6 +16,7 @@ function ButtonAppBar() {
                     <Button onClick={() => navigate("/")} color="inherit">Home</Button>
                     <Button onClick={() => navigate("/movies")} color="inherit">Movies</Button>
                     <Button onClick={() => navigate("/add-movie")} color="inherit">Add Movie</Button>
+                    <Button onClick={() => navigate("/color-game")} color="inherit">Color Game</Button>
                 </Toolbar>
             </AppBar>
         </Box>

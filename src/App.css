@@ -92,3 +92,29 @@ body {
     margin-inline: auto;
     /* border: 2px solid red; */
 }
+
+
+
+/* add-color */
+
+.color-game-container {
+    width: 40%;
+    margin-inline: auto;
+}
+
+.colors-container {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.color-input-wrapper {
+    margin-inline: auto;
+}
+
+.color-input-wrapper>* {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 7px;
+}
