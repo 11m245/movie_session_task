@@ -43,6 +43,7 @@ body {
     max-width: 380px;
     gap: 1rem;
     margin: 1rem auto;
+    min-height: 100vh;
 }
 
 
@@ -52,6 +53,7 @@ body {
     width: 400px;
     margin: 0 auto;
     text-align: center;
+    min-height: 100vh;
 }
 
 /* not-found */
@@ -83,8 +85,14 @@ body {
     list-style-type: none;
 }
 
-.nav-items-wrapper>li {
+.nav-items-wrapper>li{
     padding-inline: 20px;
+    
+}
+
+.nav-items-wrapper>li >a{
+    text-decoration: none;
+    color: red;
 }
 
 .movie-details-wrapper {
@@ -100,6 +108,7 @@ body {
 .color-game-container {
     width: 40%;
     margin-inline: auto;
+    min-height: 100vh;
 }
 
 .colors-container {
