@@ -18,7 +18,7 @@ export function MovieList() {
 
     const deleteMovie = (id) => {
         fetch(`https://63899fdd4eccb986e895a955.mockapi.io/movies/${id}`, { method: "DELETE" })
-            .then(getMovies());
+            .then(data => getMovies());
     };
 
     console.log(movieList);
