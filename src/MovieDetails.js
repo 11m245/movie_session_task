@@ -1,12 +1,24 @@
 import { useParams, useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import { useState, useEffect } from "react";
 
 export function MovieDetails({ movieList }) {
     const { id } = useParams();
-    const movie = movieList[id];
+    const navigate = useNavigate(); // this is the variable where dynamic url is saved
+    // const movie = movieList[id];
+    const [movie, setMovie] = useState([]);
 
-    const navigate = useNavigate();
+    // console.log("url id is", id);
+
+    useEffect(() => {
+        fetch(`https://63899fdd4eccb986e895a955.mockapi.io/movies/${id}`, { method: "GET" })
+            .then(data => data.json())
+            .then(movie => setMovie(movie));
+    }, []);
+
+    // console.log("movie is", movie);
+
 
     const styles = {
         color: movie.rating >= 8.5 ? "green" : "red",

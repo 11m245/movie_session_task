@@ -11,7 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import { CardActionArea, CardActions } from '@mui/material';
 
 
-export function Movie({ movie, index }) {
+export function Movie({ movie, id, deleteButton }) {
 
     const rating_style = {
         color: movie.rating >= 8.5 ? "green" : "red"
@@ -21,7 +21,7 @@ export function Movie({ movie, index }) {
     const navigate = useNavigate();
 
     return (
-        <Card key={index} className="movie-container">
+        <Card key={id} className="movie-container">
             <CardActionArea>
                 <img src={movie.poster} alt={movie.name} className="movie-poster" />
                 <CardContent>
@@ -31,7 +31,7 @@ export function Movie({ movie, index }) {
                                 {show ? <ExpandLessIcon /> : <ExpandMoreIcon />}
                             </IconButton>
 
-                            <IconButton onClick={() => navigate(`/movies/${index}`)} aria-label="movie-info" color="primary">
+                            <IconButton onClick={() => navigate(`/movies/${id}`)} aria-label="movie-info" color="primary">
                                 <InfoIcon />
                             </IconButton>
                         </h2>
@@ -42,6 +42,7 @@ export function Movie({ movie, index }) {
             </CardActionArea>
             <CardActions>
                 <LikeDisLikeButton />
+                {deleteButton}
             </CardActions>
         </Card>
     );
