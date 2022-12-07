@@ -20,7 +20,7 @@ function ButtonAppBar({ mode, setMode }) {
                     <Button onClick={() => navigate("/movies")} color="inherit">Movies</Button>
                     <Button onClick={() => navigate("/add-movie")} color="inherit">Add Movie</Button>
                     <Button onClick={() => navigate("/color-game")} color="inherit">Color Game</Button>
-                    <Button onClick={() => setMode(mode === "light" ? "dark" : "light")} color="inherit">
+                    <Button sx={{ marginLeft: "auto" }} onClick={() => setMode(mode === "light" ? "dark" : "light")} color="inherit">
                         {mode === "light" ? "dark" : "light"} mode    {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
                     </Button>
                 </Toolbar>

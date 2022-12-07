@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { CardActionArea, CardActions } from '@mui/material';
+import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline';
 
 
 export function Movie({ movie, id, deleteButton }) {
@@ -43,6 +44,9 @@ export function Movie({ movie, id, deleteButton }) {
             <CardActions>
                 <LikeDisLikeButton />
                 {deleteButton}
+                <IconButton onClick={() => navigate(`/edit-movie/${id}`)} aria-label="edit-movie" color="primary">
+                    <DriveFileRenameOutlineIcon />
+                </IconButton>
             </CardActions>
         </Card>
     );

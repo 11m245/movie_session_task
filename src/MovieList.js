@@ -24,7 +24,7 @@ export function MovieList() {
     console.log(movieList);
     return (
         <div className="movie-list">
-            {movieList.map((movieObj) => (<Movie id={movieObj.id} movie={movieObj} deleteButton={<IconButton onClick={() => deleteMovie(movieObj.id)} color="secondary" aria-label="delete"><DeleteIcon /></IconButton>} />))}
+            {movieList.map((movieObj) => (<Movie id={movieObj.id} movie={movieObj} deleteButton={<IconButton sx={{ marginLeft: "auto" }} onClick={() => deleteMovie(movieObj.id)} color="error" aria-label="delete"><DeleteIcon /></IconButton>} />))}
         </div>
     );
 

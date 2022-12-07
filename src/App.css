@@ -53,6 +53,22 @@ body {
     min-height: 100vh;
 }
 
+.error-message{
+    margin: 0;
+    color: red;
+    text-align: center;
+}
+
+
+/* edit-movie-form */
+.edit-movie-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 380px;
+    gap: 1rem;
+    margin: 1rem auto;
+    min-height: 100vh;
+}
 
 /* home */
 

@@ -4,8 +4,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useState, useEffect } from "react";
 
 export function MovieDetails({ movieList }) {
-    const { id } = useParams();
-    const navigate = useNavigate(); // this is the variable where dynamic url is saved
+    const { id } = useParams();// this is the variable where dynamic url is saved
+    const navigate = useNavigate();
     // const movie = movieList[id];
     const [movie, setMovie] = useState([]);
 
