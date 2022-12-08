@@ -33,16 +33,21 @@ function AddMovieForm() {
     return (
         <form className="add-movie-form" onSubmit={handleSubmit}>
             <h3 style={{ textAlign: "center", margin: 0 }}>Add Movie Form</h3>
-            <TextField id="outlined-basic" label="Enter Movie Name" variant="outlined" onChange={handleChange} onBlur={handleBlur} value={values.name} name="name" />
-            {touched.name && errors.name ? <p className='error-message'>{errors.name}</p> : null}
-            <TextField id="outlined-basic" label="Enter Poster URL" variant="outlined" onChange={handleChange} onBlur={handleBlur} value={values.poster} name="poster" />
-            {touched.poster && errors.poster ? <p className='error-message'>{errors.poster}</p> : null}
-            <TextField id="outlined-basic" label="Enter Trailer URL" variant="outlined" onChange={handleChange} onBlur={handleBlur} value={values.trailer} name="trailer" />
-            {touched.trailer && errors.trailer ? <p className='error-message'>{errors.trailer}</p> : null}
-            <TextField id="outlined-basic" label="Enter Rating" variant="outlined" onChange={handleChange} onBlur={handleBlur} value={values.rating} name="rating" />
-            {touched.rating && errors.rating ? errors.rating : null}
-            <TextField id="outlined-basic" label="Summary" variant="outlined" onChange={handleChange} onBlur={handleBlur} value={values.summary} name="summary" />
-            {touched.summary && errors.summary ? errors.summary : null}
+            <TextField id="outlined-basic" label="Enter Movie Name" variant="outlined" onChange={handleChange} onBlur={handleBlur}
+                value={values.name} name="name" error={touched.name && errors.name} helperText={errors.name} />
+            {/* {touched.name && errors.name ? className='error-message'>{errors.name}</className=> : null} */}
+            <TextField id="outlined-basic" label="Enter Poster URL" variant="outlined" onChange={handleChange} onBlur={handleBlur}
+                value={values.poster} name="poster" error={touched.poster && errors.poster} helperText={errors.poster} />
+
+            <TextField id="outlined-basic" label="Enter Trailer URL" variant="outlined" onChange={handleChange} onBlur={handleBlur}
+                value={values.trailer} name="trailer" error={touched.trailer && errors.trailer} helperText={errors.trailer} />
+
+            <TextField id="outlined-basic" label="Enter Rating" variant="outlined" onChange={handleChange} onBlur={handleBlur}
+                value={values.rating} name="rating" error={touched.rating && errors.rating} helperText={errors.rating} />
+
+            <TextField id="outlined-basic" label="Summary" variant="outlined" onChange={handleChange} onBlur={handleBlur}
+                value={values.summary} name="summary" error={touched.summary && errors.summary} helperText={errors.summary} />
+
             <Button type="submit" variant="contained">Submit New Movie</Button>
         </form>
     );
