@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
+import { API } from './global';
 
 export function AddMovieFn({ movieList, setmovieList }) {
 
@@ -16,7 +17,7 @@ export function AddMovieFn({ movieList, setmovieList }) {
         const newMovie = { name: name, poster: poster, trailer: trailer, rating: rating, summary: summary };
         // setmovieList([...movieList, newMovie]);
         // console.log(newMovie);
-        fetch("https://63899fdd4eccb986e895a955.mockapi.io/movies", {
+        fetch(`${API}`, {
             method: "POST",
             headers: { "Content-type": "application/json" }, body: JSON.stringify(newMovie)
         }).then(() => navigate("/movies"));
